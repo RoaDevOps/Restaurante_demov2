@@ -1,0 +1,38 @@
+Estructura profesional:
+
+/index.html (pantalla principal del QR)
+
+/css/style.css
+
+/images/ (aquí pondrás fotos y logo)
+
+/pages/wifi.html (formulario de acceso WiFi)
+
+/images/logo.png (placeholder para reemplazar)
+
+Botones listos para usar:
+
+Instagram → solo pega el link
+
+Facebook → solo pega el link
+
+WhatsApp → solo pega el link
+
+Reservas → usa el mismo link de WhatsApp
+
+Menú → solo pega el link del menú (PDF o web)
+
+WiFi → abre una página con formulario
+
+Formulario WiFi incluido:
+Campos:
+
+Nombre
+
+Nacionalidad
+
+Número (opcional)
+
+Correo
+
+Está listo visualmente. Después lo conectamos a AWS para guardar los datos (DynamoDB + Lambda). Eso ya lo convierte en producto premium.

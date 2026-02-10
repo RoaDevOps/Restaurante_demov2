@@ -1,0 +1,174 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accesos Restaurante</title>
+        <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body{
+            margin:0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(180deg,#0b0b0b,#111);
+            color:white;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            width:380px;
+            max-width:92%;
+            padding:30px 25px 35px;
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(255,255,255,0.08);
+            border-radius:18px;
+            backdrop-filter: blur(10px);
+            box-shadow:0 20px 40px rgba(0,0,0,0.6);
+            text-align:center;
+        }
+
+        .logo{
+            margin-bottom:18px;
+        }
+
+        .logo img{
+            width:120px;
+            height:120px;
+            object-fit:cover;
+            border-radius:14px;
+            border:1px solid rgba(255,255,255,0.15);
+            box-shadow:0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .ad-space{
+            margin-bottom:18px;
+        }
+
+        .ad-space img{
+            width:100%;
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,0.12);
+        }
+
+        .title{
+            font-size:20px;
+            font-weight:600;
+            margin-bottom:5px;
+        }
+
+        .subtitle{
+            font-size:13px;
+            opacity:.6;
+            margin-bottom:22px;
+        }
+
+        .buttons{
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+        }
+
+        .btn{
+            text-decoration:none;
+            color:white;
+            padding:13px;
+            border-radius:10px;
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.08);
+            font-weight:500;
+            transition:.25s;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .btn:hover{
+            transform:translateY(-2px);
+            background:linear-gradient(90deg,#ff7a18,#ffb347);
+            color:black;
+            font-weight:600;
+            box-shadow:0 10px 25px rgba(0,0,0,.6);
+        }
+
+        .promo{
+            margin-top:25px;
+            padding:14px;
+            border-radius:12px;
+            background:linear-gradient(90deg,#ff7a18,#ffb347);
+            color:black;
+            font-size:14px;
+            font-weight:600;
+        }
+
+        .wifi-note{
+            margin-top:12px;
+            font-size:12px;
+            opacity:.6;
+        }
+
+        .data-space{
+            margin-top:18px;
+        }
+
+        .data-space img{
+            width:100%;
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,0.12);
+        }
+    </style>
+
+    </head>
+    <body>
+
+        <!-- PUBLICIDAD IZQUIERDA -->
+    <div class="sidebar">
+        <!-- CAMBIAR NOMBRE DE IMAGEN -->
+        <img src="images/publicidad_aqui.png" alt="Publicidad">
+    </div>
+
+    <div class="container">
+
+        <div class="logo">
+            <img src="images/Perfil.jpg" alt="Logo">
+        </div>
+
+        <div class="title">Bienvenido</div>
+        <div class="subtitle">Conéctate · Reserva · Síguenos</div>
+
+        <div class="buttons">
+
+            <a href="PEGAR_LINK_INSTAGRAM" class="btn">📸 Instagram</a>
+
+            <a href="https://web.facebook.com/profile.php?id=61584263081978" class="btn">👍 Facebook</a>
+
+            <a href="PEGAR_LINK_WHATSAPP" class="btn">💬 WhatsApp</a>
+
+            <a href="pages/wifi.html" class="btn">📶 WiFi Gratis</a>
+
+            <a href="PEGAR_LINK_MENU" class="btn">🍽 Ver Menú</a>
+
+            <a href="PEGAR_LINK_WHATSAPP" class="btn">📅 Reservar Mesa</a>
+
+        </div>
+
+        <div class="promo">
+            🎵 Música en vivo todos los jueves
+        </div>
+
+        <div class="wifi-note">
+            Pide la contraseña del WiFi en caja
+        </div>
+
+    </div>
+    <!-- DATOS DEL NEGOCIO DERECHA -->
+    <div class="sidebar">
+        <!-- CAMBIAR NOMBRE DE IMAGEN -->
+        <img src="images/datos_negocio.png" alt="Datos del negocio">
+    </div>
+
+    </body>
+    </html>
+
+
