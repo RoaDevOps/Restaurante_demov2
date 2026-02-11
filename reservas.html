@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservar Mesa</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', Tahoma, sans-serif;
+    background:linear-gradient(180deg,#0b0b0b,#111);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:420px;
+    max-width:95%;
+    padding:35px 30px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 25px 50px rgba(0,0,0,0.7);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:13px;
+    opacity:.6;
+    margin-bottom:25px;
+}
+
+input, textarea{
+    width:100%;
+    padding:13px;
+    margin-bottom:14px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:10px;
+    color:white;
+    font-size:14px;
+    outline:none;
+}
+
+textarea{
+    resize:none;
+    height:80px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    background:linear-gradient(90deg,#ff7a18,#ffb347);
+    color:black;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+.back{
+    margin-top:18px;
+    text-align:center;
+}
+
+.back a{
+    color:white;
+    font-size:13px;
+    opacity:.6;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Reserva tu Mesa</h2>
+<div class="subtitle">Completa los datos y confirma tu visita</div>
+
+<form id="reservaForm">
+
+<input type="text" id="nombre" placeholder="Nombre completo" required>
+
+<input type="tel" id="telefono" placeholder="Número de teléfono" required>
+
+<input type="number" id="personas" placeholder="Número de personas" required>
+
+<input type="date" id="fecha" required>
+
+<input type="time" id="hora" required>
+
+<textarea id="comentarios" placeholder="Comentarios adicionales (opcional)"></textarea>
+
+<button type="submit">Confirmar Reserva</button>
+
+</form>
+
+<div class="back">
+<a href="../index.html">← Volver al inicio</a>
+</div>
+
+</div>
+
+<script>
+document.getElementById("reservaForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const datos = {
+        nombre: document.getElementById("nombre").value,
+        telefono: document.getElementById("telefono").value,
+        personas: document.getElementById("personas").value,
+        fecha: document.getElementById("fecha").value,
+        hora: document.getElementById("hora").value,
+        comentarios: document.getElementById("comentarios").value
+    };
+
+    console.log("Datos enviados:", datos);
+
+    // 🔥 AQUI PEGARÁS TU API DE AWS
+    /*
+    await fetch("PEGA_AQUI_TU_API_GATEWAY", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(datos)
+    });
+    */
+
+    alert("Reserva enviada correctamente");
+});
+</script>
+
+</body>
+</html>
