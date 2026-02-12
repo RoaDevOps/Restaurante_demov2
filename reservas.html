@@ -15,41 +15,46 @@ body{
     justify-content:center;
     align-items:center;
     min-height:100vh;
+    padding: 10px; /* espacio en móviles */
+    box-sizing: border-box;
 }
 
 .container{
     width:420px;
-    max-width:95%;
-    padding:35px 30px;
+    max-width:100%; /* asegurar que no se salga de la pantalla en móviles */
+    padding:25px 20px; /* menos padding en móviles */
     background:rgba(255,255,255,0.04);
     border:1px solid rgba(255,255,255,0.08);
     border-radius:20px;
     backdrop-filter:blur(12px);
     box-shadow:0 25px 50px rgba(0,0,0,0.7);
+    box-sizing: border-box;
 }
 
 h2{
     text-align:center;
     margin-bottom:8px;
+    font-size:1.5rem; /* más adaptable en móviles */
 }
 
 .subtitle{
     text-align:center;
     font-size:13px;
     opacity:.6;
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
 input, textarea{
     width:100%;
-    padding:13px;
-    margin-bottom:14px;
+    padding:12px;
+    margin-bottom:12px;
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.1);
     border-radius:10px;
     color:white;
     font-size:14px;
     outline:none;
+    box-sizing: border-box;
 }
 
 textarea{
@@ -75,7 +80,7 @@ button:hover{
 }
 
 .back{
-    margin-top:18px;
+    margin-top:15px;
     text-align:center;
 }
 
@@ -84,6 +89,20 @@ button:hover{
     font-size:13px;
     opacity:.6;
     text-decoration:none;
+}
+
+/* Ajustes específicos para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    .container {
+        padding:20px 15px;
+    }
+    h2 {
+        font-size:1.3rem;
+    }
+    input, textarea, button {
+        font-size:13px;
+        padding:10px;
+    }
 }
 </style>
 </head>
@@ -132,22 +151,29 @@ document.getElementById("reservaForm").addEventListener("submit", async function
         comentarios: document.getElementById("comentarios").value
     };
 
-    console.log("Datos enviados:", datos);
+    try{
+        const res = await fetch("https://zqsj5faxn8.execute-api.us-east-1.amazonaws.com/reservas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datos)
+        });
 
-    // 🔥 AQUI PEGARÁS TU API DE AWS
-    /*
-    await fetch("PEGA_AQUI_TU_API_GATEWAY", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(datos)
-    });
-    */
+        if(res.ok){
+            alert("Reserva enviada correctamente");
+            document.getElementById("reservaForm").reset();
+        }else{
+            alert("Error al enviar la reserva");
+        }
 
-    alert("Reserva enviada correctamente");
+    }catch(error){
+        alert("No se pudo conectar con el servidor");
+        console.error(error);
+    }
 });
 </script>
 
 </body>
 </html>
+
