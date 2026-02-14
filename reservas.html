@@ -15,14 +15,14 @@ body{
     justify-content:center;
     align-items:center;
     min-height:100vh;
-    padding: 10px; /* espacio en móviles */
+    padding: 10px;
     box-sizing: border-box;
 }
 
 .container{
     width:420px;
-    max-width:100%; /* asegurar que no se salga de la pantalla en móviles */
-    padding:25px 20px; /* menos padding en móviles */
+    max-width:100%;
+    padding:25px 20px;
     background:rgba(255,255,255,0.04);
     border:1px solid rgba(255,255,255,0.08);
     border-radius:20px;
@@ -34,7 +34,7 @@ body{
 h2{
     text-align:center;
     margin-bottom:8px;
-    font-size:1.5rem; /* más adaptable en móviles */
+    font-size:1.5rem;
 }
 
 .subtitle{
@@ -91,7 +91,6 @@ button:hover{
     text-decoration:none;
 }
 
-/* Ajustes específicos para pantallas muy pequeñas */
 @media (max-width: 400px) {
     .container {
         padding:20px 15px;
@@ -116,11 +115,13 @@ button:hover{
 
 <form id="reservaForm">
 
-<input type="text" id="nombre" placeholder="Nombre completo" required>
+<input type="text" id="apellido" placeholder="Apellido" required>
+
+<input type="text" id="nombre" placeholder="Nombre" required>
 
 <input type="tel" id="telefono" placeholder="Número de teléfono" required>
 
-<input type="number" id="personas" placeholder="Número de personas" required>
+<input type="number" id="personas" placeholder="Personas" min="1" required>
 
 <input type="date" id="fecha" required>
 
@@ -142,13 +143,16 @@ button:hover{
 document.getElementById("reservaForm").addEventListener("submit", async function(e){
     e.preventDefault();
 
+    const nombre = document.getElementById("nombre").value.trim();
+    const apellido = document.getElementById("apellido").value.trim();
+
     const datos = {
-        nombre: document.getElementById("nombre").value,
-        telefono: document.getElementById("telefono").value,
+        nombreCompleto: nombre + " " + apellido,
+        telefono: document.getElementById("telefono").value.trim(),
         personas: document.getElementById("personas").value,
         fecha: document.getElementById("fecha").value,
         hora: document.getElementById("hora").value,
-        comentarios: document.getElementById("comentarios").value
+        comentarios: document.getElementById("comentarios").value.trim()
     };
 
     try{
